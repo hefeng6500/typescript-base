@@ -1,0 +1,21 @@
+{
+  // 使用 Nodejs 调试 TypeScript
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch TypeScript with ts-node and ESM",
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register", // 使用 ts-node 注册 TypeScript 运行时
+        "--loader",
+        "ts-node/esm" // 启用 ts-node ESM 加载器
+      ],
+      "program": "${workspaceFolder}/src/15.decorators.ts", // 你要调试的 TypeScript 文件
+      "cwd": "${workspaceFolder}",
+      "sourceMaps": true, // 启用源码映射
+      "outFiles": ["${workspaceFolder}/**/*.js"]
+    }
+  ]
+}
